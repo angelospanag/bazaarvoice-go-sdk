@@ -2,3 +2,4 @@ package: github.com/angelospanag/bazaarvoice-go-sdk
 import:
 - package: github.com/gorilla/mux
 - package: github.com/spf13/viper
+- package: github.com/google/jsonapi

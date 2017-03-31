@@ -24,3 +24,4 @@ _testmain.go
 *.prof
 vendor
 bazaarvoice-go-sdk
+.idea
