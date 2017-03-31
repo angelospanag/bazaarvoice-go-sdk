@@ -1,0 +1,10 @@
+[staging]
+server = "http://stg.api.bazaarvoice.com"
+api_key = "caB45h2jBqXFw1OE043qoMBD1gJC8EwFNCjktzgwncXY4"
+api_version = "5.4"
+test_product = "data-gen-moppq9ekthfzbc6qff3bqokie"
+
+[production]
+server = "http://api.bazaarvoice.com"
+api_key = "caB45h2jBqXFw1OE043qoMBD1gJC8EwFNCjktzgwncXY4"
+api_version = "5.4"
