@@ -5,6 +5,7 @@ import (
 	"regexp"
 )
 
+// ValidateLimit Validate that the 'limit' URL parameter is a number
 func ValidateLimit(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 

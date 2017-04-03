@@ -7,6 +7,7 @@ import (
 	"github.com/angelospanag/bazaarvoice-go-sdk/domain"
 )
 
+// ReviewsFromBV Reviews struct from BazaarVoice
 type ReviewsFromBV struct {
 	Limit        int    `json:"Limit"`
 	Offset       int    `json:"Offset"`
@@ -91,6 +92,7 @@ type ReviewsFromBV struct {
 	Errors    []interface{} `json:"Errors"`
 }
 
+// ReviewsMapping Maps reviews data from BazaarVoice to the a JSON API domain Review
 func ReviewsMapping(reviewsFromBV ReviewsFromBV) []*domain.Review {
 
 	reviews := []*domain.Review{}

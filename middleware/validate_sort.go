@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// ValidateSort Validate the correct syntax of the 'sort' URL parameter
 func ValidateSort(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 

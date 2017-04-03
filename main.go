@@ -36,13 +36,14 @@ func main() {
 	}
 }
 
+// GetReviewsForProduct Retrieve reviews of a product
 func GetReviewsForProduct(w http.ResponseWriter, r *http.Request) {
 
 	//params := mux.Vars(req)
 	//TODO change
 	//productId := params["productId"]
-	productId := viper.GetString("staging.test_product")
-	queryString := viper.GetString("staging.server") + "/data/reviews.json?apiversion=" + viper.GetString("staging.api_version") + "&passkey=" + viper.GetString("staging.api_key") + "&Filter=ProductId:" + productId
+	productID := viper.GetString("staging.test_product")
+	queryString := viper.GetString("staging.server") + "/data/reviews.json?apiversion=" + viper.GetString("staging.api_version") + "&passkey=" + viper.GetString("staging.api_key") + "&Filter=ProductId:" + productID
 
 	sort := r.URL.Query().Get("sort")
 	limit := r.URL.Query().Get("limit")
