@@ -10,7 +10,7 @@ import (
 
 // Review A product review
 type Review struct {
-	ID             int       `jsonapi:"primary,reviews"`
+	ID             int       `jsonapi:"primary,review"`
 	AuthorID       string    `jsonapi:"attr,author_id"`
 	ReviewText     string    `jsonapi:"attr,review_text"`
 	SubmissionTime time.Time `jsonapi:"attr,submission_time"`
