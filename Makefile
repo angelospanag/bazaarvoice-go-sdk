@@ -24,3 +24,5 @@ imports:
 
 run: build
 	@./$(APPBIN)
+
+gendoc: aglio -i api-description.apib -o index.html
