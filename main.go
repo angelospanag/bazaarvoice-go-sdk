@@ -25,7 +25,7 @@ func main() {
 	} else {
 
 		getReviewsForProductChain := alice.New(middleware.ValidateLimit, middleware.ValidateSort)
-		router.Handle("/reviews/{productId}", getReviewsForProductChain.ThenFunc(handlers.GetReviewsForProduct))
+		router.Handle("/product/{productId}/reviews", getReviewsForProductChain.ThenFunc(handlers.GetReviewsForProduct))
 
 		log.Fatal(http.ListenAndServe(":12345", router))
 	}

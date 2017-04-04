@@ -1,6 +1,42 @@
 FORMAT: 1A
 
-# GET /
-+ Response 200 (application/vnd.api+json; charset=utf-8)
+# Reviews
 
-        {"message": "Hello World!"}
+
+## Reviews Collection [/product/{product_Id}/reviews]
+
++ Parameters
+    + product_Id: `1234` (number,required) - ID of the product in the form of an integer
+
+### Get Reviews of a Product [GET]
+
++ Response 200 (application/vnd.api+json)
+
+  {
+    "data": [
+      {
+        "type": "review",
+        "id": "19385807",
+        "attributes": {
+          "author_id": "58de0f787b53c",
+          "review_text": "Dung cung duoc, noi chung la ok blah blah blah blah blah",
+          "submission_time": 1490948095
+        },
+        "links": {
+          "self": "https://example.com/review/19385807"
+        }
+      },
+      {
+        "type": "review",
+        "id": "19385747",
+        "attributes": {
+          "author_id": "58ddf885a99cf",
+          "review_text": "Dung cung duoc, noi chung la ok blah blah blah blah blah",
+          "submission_time": 1490942220
+        },
+        "links": {
+          "self": "https://example.com/review/19385747"
+        }
+      }
+    ]
+  }
