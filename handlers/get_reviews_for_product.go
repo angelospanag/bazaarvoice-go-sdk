@@ -45,6 +45,10 @@ func GetReviewsForProduct(w http.ResponseWriter, r *http.Request) {
 
 	body, err := ioutil.ReadAll(responseFromBV.Body)
 
+	if err != nil {
+		log.Println("Could not read response from BV")
+	}
+
 	err = json.Unmarshal(body, &reviewsFromBV)
 
 	if err != nil {
