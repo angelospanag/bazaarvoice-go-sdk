@@ -57,8 +57,8 @@ func GetReviewsForProduct(w http.ResponseWriter, r *http.Request) {
 
 	reviews := mapping.ReviewsMapping(reviewsFromBV)
 
-	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", jsonapi.MediaType)
+	w.WriteHeader(http.StatusOK)
 
 	if err := jsonapi.MarshalManyPayload(w, reviews); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
