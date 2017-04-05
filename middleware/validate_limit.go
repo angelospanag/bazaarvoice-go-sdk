@@ -27,9 +27,6 @@ func ValidateLimit(next http.Handler) http.Handler {
 					Status: "400",
 				}})
 				return
-
-				//http.Error(w, http.StatusText(400), http.StatusBadRequest)
-				//return
 			}
 		}
 		next.ServeHTTP(w, r)
