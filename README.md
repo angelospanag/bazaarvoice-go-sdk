@@ -4,7 +4,7 @@ A wrapper around the [BazaarVoice](http://www.bazaarvoice.com/) API written in G
 
 Responses are formatted using the [JSON API](http://jsonapi.org/) specification.
 
-**Warning** This project Work In Progress and under heavy development.
+**Warning** This project is considered Work In Progress and under heavy development.
 
 ## Installation
 
