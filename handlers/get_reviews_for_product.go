@@ -8,16 +8,16 @@ import (
 
 	"github.com/angelospanag/bazaarvoice-go-sdk/mapping"
 	"github.com/google/jsonapi"
+	"github.com/gorilla/mux"
 	"github.com/spf13/viper"
 )
 
 // GetReviewsForProduct Retrieve reviews of a product
 func GetReviewsForProduct(w http.ResponseWriter, r *http.Request) {
 
-	//params := mux.Vars(req)
-	//TODO change
-	//productId := params["productId"]
-	productID := viper.GetString("staging.test_product")
+	params := mux.Vars(r)
+	productID := params["productId"]
+
 	queryString := viper.GetString("staging.server") + "/data/reviews.json?apiversion=" + viper.GetString("staging.api_version") + "&passkey=" + viper.GetString("staging.conversations_api_key") + "&Filter=ProductId:" + productID
 
 	sort := r.URL.Query().Get("sort")
