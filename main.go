@@ -24,8 +24,11 @@ func main() {
 		log.Println("Config file not found...")
 	} else {
 
-		getReviewsForProductChain := alice.New(middleware.ValidateLimit, middleware.ValidateSort)
-		router.Handle("/product/{productId}/reviews", getReviewsForProductChain.ThenFunc(handlers.GetReviewsForProduct))
+		getReviewsForProductChain := alice.New(middleware.ValidateProductID, middleware.ValidateLimit, middleware.ValidateSort)
+		submitReviewForProductChain := alice.New(middleware.ValidateProductID)
+
+		router.Handle("/product/{productID}/reviews", getReviewsForProductChain.ThenFunc(handlers.GetReviewsForProduct)).Methods("GET")
+		router.Handle("/product/{productID}/review", submitReviewForProductChain.ThenFunc(handlers.SubmitReviewForProduct)).Methods("POST")
 
 		log.Fatal(http.ListenAndServe(":12345", router))
 	}
